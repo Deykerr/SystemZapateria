@@ -29,7 +29,7 @@ public class VentaController {
         return  ResponseEntity.ok(ventaService.findAllVenta());
     }
 
-    @GetMapping("/venta/{id}")
+    @GetMapping("/venta/{idVenta}")
     public ResponseEntity<VentaResponse> getVentasById(@PathVariable Integer idVenta){
         return  ResponseEntity.ok(ventaService.findByIdVenta(idVenta));
     }
@@ -39,7 +39,7 @@ public class VentaController {
         ventaService.saveVenta(request);
     }
 
-    @PutMapping("/update/venta/{id}")
+    @PutMapping("/update/venta/{idVenta}")
     public void updateVentasById(@PathVariable Integer idVenta, @RequestBody VentaRequest request){
     	ventaService.updateVenta(idVenta, request);
     }

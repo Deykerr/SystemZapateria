@@ -32,6 +32,7 @@ public class VentaMapper {
     public VentaResponse toVentaToVentaResponse(Venta venta) {
     	VentaResponse ventaResponse = new VentaResponse();
         if(venta != null) {
+            ventaResponse.setIdentificador(venta.getIdVenta());
         	ventaResponse.setIdCliente(venta.getIdCliente());
         	ventaResponse.setFecha(venta.getFecha());
         	ventaResponse.setMetodoPago(venta.getMetodoPago());

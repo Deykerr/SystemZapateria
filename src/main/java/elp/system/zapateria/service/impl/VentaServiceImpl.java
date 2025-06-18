@@ -1,5 +1,6 @@
 package elp.system.zapateria.service.impl;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -48,7 +49,8 @@ public class VentaServiceImpl implements VentaService {
 	        Venta ventaNew =new  Venta();
 	        System.out.println("que llega" + ventaNew);
 	        ventaNew.setIdCliente(request.getIdCliente());
-	        ventaNew.setFecha(request.getFecha());
+	        //ventaNew.setFecha(request.getFecha());
+	        ventaNew.setFecha(LocalDateTime.now());
 	        ventaNew.setMetodoPago(request.getMetodoPago());
 	        
 	        ventaRepository.save(ventaNew);
@@ -59,7 +61,7 @@ public class VentaServiceImpl implements VentaService {
 	        Venta venta = ventaRepository.findById(idVenta).orElse(null);
 	        if (venta != null) {
 	        	venta.setIdCliente(request.getIdCliente());
-	        	venta.setFecha(request.getFecha());
+	        	venta.setFecha(LocalDateTime.now());
 	        	venta.setMetodoPago(request.getMetodoPago());	         
 	            ventaRepository.save(venta);
 	        }

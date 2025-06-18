@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 public class VentaRequest {
 	private String idCliente;
-	private LocalDateTime fecha;
+	//private LocalDateTime fecha;
 	private String metodoPago;
 	
 }
